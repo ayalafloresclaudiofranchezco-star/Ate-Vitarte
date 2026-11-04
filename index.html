@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Municipalidad Distrital de Ate - Inicio</title>
+  <link rel="stylesheet" href="pablo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Navegación -->
+  <header class="header">
+    <div class="logo-container">
+      <img style="width: 50px; height: 60px;" src="IMG/Logo.png">
+      <h1>Municipalidad de Ate <span>Distrito de Historia, Progreso y Alegria</span></h1>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="municipalidad.html">Municipalidad</a>
+      <a href="tramites.html">Trámites y Servicios</a>
+      <a href="turismo.html">Turismo</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Banner Carrusel -->
+  <section class="carousel-container">
+    <div class="carousel-slide fade active">
+      <img src="IMG/carrucel1.jpg" alt="Ate Moderno">
+      <div class="carousel-text">
+        <h2>Un distrito que avanza unido</h2>
+        <p>Trabajando día a día con el entusiasmo y la energia de siempre.</p>
+      </div>
+    </div>
+    <div class="carousel-slide fade">
+      <img src="IMG/carrucel2.jpg" alt="Obras en Ate">
+      <div class="carousel-text">
+        <h2>Nuevas Obras viales</h2>
+        <p>Mejoramos la conectividad y seguridad de las vías principales.</p>
+      </div>
+    </div>
+    <div class="carousel-slide fade">
+      <img src="IMG/carrucel3.jpg" alt="Cultura y Deporte">
+      <div class="carousel-text">
+        <h2>Espacios para la Familia</h2>
+        <p>Parques e instalaciones renovadas para el disfrute de todos.</p>
+      </div>
+    </div>
+
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+    <div class="dots-container">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+  </section>
+
+  <!-- Bienvenida -->
+  <section class="welcome-section">
+    <div class="container">
+      <h2>¡Bienvenidos al Portal Oficial de la Municipalidad de Ate!</h2>
+      <p>Nos alegra recibirte. Este espacio está diseñado para brindarte atención rápida, información clara y transparente. Como decía Pablo: <em>"¡Tengo un problema... pero seguro encontraremos la solución!"</em>. Estamos a tu servicio.</p>
+    </div>
+  </section>
+
+  <!-- Datos Importantes -->
+  <section class="data-section">
+    <div class="container">
+      <h2>Datos Importantes del Distrito</h2>
+      <div class="data-grid">
+        <div class="data-card">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <h3>Ubicación</h3>
+          <p>Lima Este, Perú (Valle del Rímac)</p>
+        </div>
+        <div class="data-card">
+          <i class="fa-solid fa-chart-area"></i>
+          <h3>Superficie</h3>
+          <p>156.3 km²</p>
+        </div>
+        <div class="data-card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Población</h3>
+          <p>+670,000 habitantes</p>
+        </div>
+        <div class="data-card">
+          <i class="fa-solid fa-calendar-check"></i>
+          <h3>Fundación</h3>
+          <p>4 de Agosto de 1821</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Noticias Destacadas -->
+  <section class="news-section">
+    <div class="container">
+      <h2>Noticias Destacadas</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <img src="IMG/Noticia1.jpg" alt="Noticia 1">
+          <div class="news-content">
+            <span class="date">02 Nov, 2026</span>
+            <h3>Campaña de Salud Gratuita en Huaycán</h3>
+            <p>Atención médica en más de 10 especialidades para todos los vecinos.</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="IMG/Noticia2.jpg" alt="Noticia 2">
+          <div class="news-content">
+            <span class="date">28 Oct, 2026</span>
+            <h3>Inauguración del Parque de la Juventud</h3>
+            <p>Espacio equipado con canchas sintéticas y zonas recreativas.</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="IMG/Noticia3.jpg" alt="Noticia 3">
+          <div class="news-content">
+            <span class="date">24 Oct, 2026</span>
+            <h3>Operativos de Mantenimiento y Limpieza</h3>
+            <p>Jornada intensiva de recojo de desmontes en la Carretera Central.</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="IMG/Noticia4.jpg" alt="Noticia 4">
+          <div class="news-content">
+            <span class="date">19 Oct, 2026</span>
+            <h3>Talleres de Emprendimiento Digital</h3>
+            <p>Capacitaciones gratuitas para pequeñas y medianas empresas locales.</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="IMG/Noticia5.jpg" alt="Noticia 5">
+          <div class="news-content">
+            <span class="date">15 Oct, 2026</span>
+            <h3>Reforzamiento de Patrullaje Integrado</h3>
+            <p>Serenazgo y PNP coordinan acciones en las zonas críticas del distrito.</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="IMG/Noticia6.jpg" alt="Noticia 6">
+          <div class="news-content">
+            <span class="date">10 Oct, 2026</span>
+            <h3>Festival Cultural y Gastronómico</h3>
+            <p>Platos típicos y presentaciones artísticas en la Plaza de Armas de Vitarte.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fotos del Distrito -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2>Galeria del Distrito</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="IMG/foto1.jpg" alt="Ate 1"></div>
+        <div class="gallery-item"><img src="IMG/foto2.jpg" alt="Ate 2"></div>
+        <div class="gallery-item"><img src="IMG/foto3.jpg" alt="Ate 3"></div>
+        <div class="gallery-item"><img src="IMG/foto4.jpg" alt="Ate 4"></div>
+        <div class="gallery-item"><img src="IMG/foto5.jpg" alt="Ate 5"></div>
+        <div class="gallery-item"><img src="IMG/foto6.jpg" alt="Ate 6"></div>
+        <div class="gallery-item"><img src="IMG/foto7.jpg" alt="Ate 7"></div>
+        <div class="gallery-item"><img src="IMG/fto8.jpg" alt="Ate 8"></div>
+        <div class="gallery-item"><img src="IMG/foto9.jpg" alt="Ate 9"></div>
+        <div class="gallery-item"><img src="IMG/foto10.jpg" alt="Ate 10"></div>
+        <div class="gallery-item"><img src="IMG/foto11.jpg" alt="Ate 11"></div>
+        <div class="gallery-item"><img src="IMG/foto12.jpg" alt="Ate 12"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página Dinámico -->
+  <footer class="footer">
+    <div class="animated-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-path"></path>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <div class="footer-block">
+        <h3>Municipalidad de Ate</h3>
+        <p>Trabajando por un distrito seguro, limpio y moderno.</p>
+        <p>Gestión transparente y cercana al vecino.</p>
+        <p>Servicios digitales eficientes para ti.</p>
+        <p>Promoviendo el turismo local y la cultura.</p>
+        <p>Siempre cerca de ti.</p>
+      </div>
+      <div class="footer-block">
+        <h3>Contacto Directo</h3>
+        <p><i class="fa-solid fa-phone"></i> Central: (01) 351-5000</p>
+        <p><i class="fa-solid fa-envelope"></i> informes@muniate.gob.pe</p>
+      </div>
+      <div class="footer-block">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/1b3pd3xXMm/"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/nuevoate.municipalidad?rpxt=bGp5NnpqZDlrNzli"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Municipalidad Distrital de Ate</p>
+    </div>
+  </footer>
+
+  <script src="pablo.js"></script>
+</body>
+</html>

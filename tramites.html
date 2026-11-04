@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Municipalidad Distrital de Ate - Trámites y Servicios</title>
+  <link rel="stylesheet" href="uniqua.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header class="header">
+    <div class="logo-container">
+      <img style="width: 50px; height: 60px;" src="IMG/Logo.png">
+      <h1>Municipalidad de Ate <span>Distrito de Historia, Progreso y Alegria</span></h1>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="municipalidad.html">Municipalidad</a>
+      <a href="tramites.html" class="active">Trámites y Servicios</a>
+      <a href="turismo.html">Turismo</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Banner de Sección -->
+  <section class="section-banner">
+    <div class="banner-content">
+      <h2>Módulo de Trámites y Servicios</h2>
+      <p>Realiza tus consultas, solicitudes de registro civil, licencias y pagos tributarios de forma rápida y segura.</p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 1: Licencias y Autorizaciones -->
+  <section class="content-section">
+    <div class="container">
+      <h2><i class="fa-solid fa-file-shield"></i> 1. Licencias y Autorizaciones</h2>
+      <p class="subtitle">Conoce los requisitos oficiales para obtener tus licencias municipales.</p>
+
+      <div class="grid-2">
+        <div class="card-box">
+          <h3><i class="fa-solid fa-store"></i> Licencia de Funcionamiento de Negocios</h3>
+          <ul class="req-list">
+            <li><i class="fa-solid fa-check"></i> Solicitud de Declaración Jurada (gratuita).</li>
+            <li><i class="fa-solid fa-check"></i> Copia DNI del titular o representante legal.</li>
+            <li><i class="fa-solid fa-check"></i> Vigencia de poder (si es persona jurídica).</li>
+            <li><i class="fa-solid fa-check"></i> Plano de ubicación y distribución del establecimiento.</li>
+            <li><i class="fa-solid fa-check"></i> Certificado de Inspección Técnica de Seguridad en Edificaciones (ITSE).</li>
+          </ul>
+        </div>
+
+        <div class="card-box">
+          <h3><i class="fa-solid fa-building-user"></i> Licencia para Edificación</h3>
+          <ul class="req-list">
+            <li><i class="fa-solid fa-check"></i> Formulario Único de Edificación (FUE) por triplicado.</li>
+            <li><i class="fa-solid fa-check"></i> Certificado de Parámetros Urbanísticos y Edificatorios.</li>
+            <li><i class="fa-solid fa-check"></i> Documento que acredite propiedad del terreno.</li>
+            <li><i class="fa-solid fa-check"></i> Planos de arquitectura, estructuras, instalaciones sanitarias y eléctricas firmados por ingenieros colegiados.</li>
+            <li><i class="fa-solid fa-check"></i> Comprobante de pago por derecho de trámite.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: Registro Civil (Dinámico con selección y PDF Real) -->
+  <section class="content-section bg-alt">
+    <div class="container">
+      <h2><i class="fa-solid fa-book-bookmark"></i> 2. Registro Civil Digital</h2>
+      <p class="subtitle">Emisión en línea y descarga de actas oficiales con validación por correo electrónico.</p>
+
+      <div class="form-container-rc">
+        <form id="civilForm">
+          <div class="form-group">
+            <label for="tipoActa"><i class="fa-solid fa-list-check"></i> Seleccione Tipo de Acta:</label>
+            <select id="tipoActa" required>
+              <option value="">-- Seleccionar Tipo de Acta --</option>
+              <option value="Nacimiento">Acta de Nacimiento</option>
+              <option value="Matrimonio">Acta de Matrimonio Civil</option>
+              <option value="Defuncion">Acta de Defunción</option>
+            </select>
+          </div>
+
+          <!-- Contenedor dinámico que cambia según la opción elegida -->
+          <div id="dynamicFields"></div>
+
+          <div class="form-group">
+            <label for="correoCiudadano"><i class="fa-solid fa-envelope"></i> Correo Electrónico (para envío de copia y respaldo):</label>
+            <input type="email" id="correoCiudadano" required placeholder="tucorreo@ejemplo.com">
+          </div>
+
+          <button type="button" id="btnGenerarActa" class="uniqua-btn">
+            <i class="fa-solid fa-file-pdf"></i> Generar y Descargar Acta en PDF
+          </button>
+        </form>
+        <div id="rcMessage" class="rc-feedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: Servicios Ciudadanos -->
+  <section class="content-section">
+    <div class="container">
+      <h2><i class="fa-solid fa-hands-holding-child"></i> 3. Servicios Ciudadanos</h2>
+      <p class="subtitle">Requisitos y simulación para servicios de salubridad y transporte menor.</p>
+
+      <div class="grid-2">
+        <div class="card-box">
+          <h3><i class="fa-solid fa-spray-can-sparkles"></i> Servicio de Fumigación</h3>
+          <p>Programa de desinfección y control de plagas para viviendas y locales comerciales del distrito.</p>
+          <h4 class="mt-2">Requisitos:</h4>
+          <ul class="req-list">
+            <li><i class="fa-solid fa-check"></i> Solicitud dirigida al área de Sanidad y Salud.</li>
+            <li><i class="fa-solid fa-check"></i> Copia de DNI del solicitante.</li>
+            <li><i class="fa-solid fa-check"></i> Recibo de pago por derecho de tasa municipal.</li>
+          </ul>
+        </div>
+
+        <div class="card-box">
+          <h3><i class="fa-solid fa-rickshaw"></i> Verificación y Registro de Mototaxis</h3>
+          <p>Control formal de unidades vehiculares menores autorizadas para transporte público en Ate.</p>
+          <h4 class="mt-2">Requisitos:</h4>
+          <ul class="req-list">
+            <li><i class="fa-solid fa-check"></i> Tarjeta de Propiedad vehicular actualizada.</li>
+            <li><i class="fa-solid fa-check"></i> SOAT vigente o CAT de la unidad.</li>
+            <li><i class="fa-solid fa-check"></i> Licencia de conducir del chofer (Clase B-IIc).</li>
+            <li><i class="fa-solid fa-check"></i> Inspección ocular y revisión técnica vehicular aprobada.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: Tributos Municipales (Dinámico - Simulador de Pagos) -->
+  <section class="content-section bg-alt">
+    <div class="container">
+      <h2><i class="fa-solid fa-calculator"></i> 4. Tributos Municipales</h2>
+      <p class="subtitle">Simulador de consulta y cálculo de deudas tributarias, arbitrios e impuestos.</p>
+
+      <div class="tributos-calculator">
+        <div class="form-group">
+          <label for="codigoContribuyente">Código de Contribuyente / DNI:</label>
+          <input type="text" id="codigoContribuyente" placeholder="Ingrese número de código o DNI">
+        </div>
+        <div class="form-group">
+          <label for="tipoTributo">Seleccione Concepto a Consultar:</label>
+          <select id="tipoTributo">
+            <option value="Predial">Impuesto Predial (Anual)</option>
+            <option value="Arbitrios">Arbitrios Municipales (Limpieza y Parques)</option>
+            <option value="Vehicular">Impuesto Vehicular</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="montoBase">Monto Base Deuda (S/.):</label>
+          <input type="number" id="montoBase" placeholder="Ej. 150.00" value="150.00">
+        </div>
+        <button type="button" id="btnCalcularTributo" class="uniqua-btn"><i class="fa-solid fa-magnifying-glass-dollar"></i> Consultar y Calcular Estado</button>
+
+        <div id="tributoResultado" class="tributo-result-box" style="display:none;">
+          <h3>Resultado de la Simulación</h3>
+          <p id="resDetalle"></p>
+          <button type="button" id="btnPagarSimulado" class="pay-btn"><i class="fa-solid fa-credit-card"></i> Pagar con Yape / Tarjeta</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECCIÓN 5: Cronograma de Limpieza y Eventos -->
+  <section class="content-section">
+    <div class="container">
+      <div class="cronograma-header">
+        <h2>Cronograma de Limpieza y Eventos</h2>
+        <p class="subtitle">Horarios del camión recolector y actividades culturales de esta semana.</p>
+      </div>
+
+      <div class="cronograma-grid-2">
+        
+        <!-- Tarjeta Izquierda: Rutas del Camión Recolector -->
+        <div class="crono-card routes-card">
+          <h3>Rutas del Camión Recolector de Basura</h3>
+
+          <div class="crono-item">
+            <div class="crono-info">
+              <h4>Vitarte Centro & Mayorazgo</h4>
+              <p>Lunes, Miércoles y Viernes</p>
+            </div>
+            <span class="badge-time green">8:00 PM - 10:00 PM</span>
+          </div>
+
+          <div class="crono-item">
+            <div class="crono-info">
+              <h4>Huaycán (Zonas A hasta la Z)</h4>
+              <p>Martes, Jueves y Sábados</p>
+            </div>
+            <span class="badge-time green">6:00 AM - 9:00 AM</span>
+          </div>
+
+          <div class="crono-item">
+            <div class="crono-info">
+              <h4>Santa Clara & Pariachi</h4>
+              <p>Diario</p>
+            </div>
+            <span class="badge-time green">9:00 PM - 11:00 PM</span>
+          </div>
+        </div>
+
+        <!-- Tarjeta Derecha: Próximos Eventos en Ate -->
+        <div class="crono-card events-card">
+          <h3>Próximos Eventos en Ate</h3>
+
+          <div class="event-item">
+            <div class="event-date-badge blue">
+              <span class="month">NOV</span>
+              <span class="day">05</span>
+            </div>
+            <div class="event-details">
+              <h4>Feria Gastronómica "Sabores de Ate"</h4>
+              <p>Plaza de Armas de Vitarte - Desde las 11:00 AM.</p>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-date-badge red">
+              <span class="month">NOV</span>
+              <span class="day">12</span>
+            </div>
+            <div class="event-details">
+              <h4>Cine Bajo las Estrellas</h4>
+              <p>Parque Zonal Huayna Cápac - Función Gratuita 6:30 PM.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página Dinámico -->
+  <footer class="footer">
+    <div class="animated-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-path"></path>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <div class="footer-block">
+        <h3>Municipalidad de Ate</h3>
+        <p>Trabajando por un distrito seguro, limpio y moderno.</p>
+        <p>Gestión transparente y cercana al vecino.</p>
+        <p>Servicios digitales eficientes para ti.</p>
+        <p>Promoviendo el turismo local y la cultura.</p>
+        <p>Siempre cerca de ti.</p>
+      </div>
+      <div class="footer-block">
+        <h3>Contacto Directo</h3>
+        <p><i class="fa-solid fa-phone"></i> Central: (01) 351-5000</p>
+        <p><i class="fa-solid fa-envelope"></i> informes@muniate.gob.pe</p>
+      </div>
+      <div class="footer-block">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/1b3pd3xXMm/"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/nuevoate.municipalidad?rpxt=bGp5NnpqZDlrNzli"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Municipalidad Distrital de Ate</p>
+    </div>
+  </footer>
+
+  <script src="uniqua.js"></script>
+</body>
+</html>

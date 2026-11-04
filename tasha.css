@@ -1,0 +1,308 @@
+/* Paleta de Colores: Tasha (Predominio del Amarillo Tasha con acentos naranja y marrón cálido) */
+:root {
+  --tasha-yellow-main: #fbc02d;    /* Amarillo Tasha Intenso */
+  --tasha-yellow-bright: #ffeb3b;  /* Amarillo Brillante */
+  --tasha-yellow-soft: #fff9c4;    /* Amarillo Suave / Fondo de elementos */
+  --tasha-bg-light: #fffde7;       /* Fondo de la página */
+  --tasha-orange-accent: #f57c00;  /* Naranja de acento (vestido) */
+  --tasha-red-accent: #e64a19;     /* Rojo/Naranja profundo */
+  --tasha-dark-text: #3e2723;      /* Marrón oscuro para legibilidad */
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--tasha-bg-light);
+  color: var(--tasha-dark-text);
+}
+
+/* Header & Nav */
+.header {
+  background: linear-gradient(135deg, var(--tasha-yellow-main), #f57f17);
+  color: var(--tasha-dark-text);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(251, 192, 45, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 4px solid var(--tasha-orange-accent);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.character-badge {
+  background: var(--tasha-orange-accent);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-container h1 {
+  font-size: 1.5rem;
+  color: var(--tasha-dark-text);
+  font-weight: 800;
+}
+
+.logo-container span {
+  color: #bf360c;
+  font-size: 0.9rem;
+  display: block;
+  font-weight: 600;
+}
+
+.nav-links a {
+  color: var(--tasha-dark-text);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--tasha-orange-accent);
+  border-bottom: 3px solid var(--tasha-orange-accent);
+  padding-bottom: 4px;
+}
+
+/* Banner de Sección */
+.section-banner {
+  background: linear-gradient(rgba(251, 192, 45, 0.9), rgba(245, 124, 0, 0.85)), url(IMG/banner4.jpg) no-repeat center center/cover;
+  color: var(--tasha-dark-text);
+  text-align: center;
+  padding: 4rem 1rem;
+  border-bottom: 5px solid var(--tasha-yellow-main);
+}
+
+.section-banner h2 {
+  font-size: 2.6rem;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(62, 39, 35, 0.4);
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.section-banner p {
+  color: #fffde7;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Contenedores y Grid a 3 Columnas */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.content-section h2 {
+  text-align: center;
+  color: var(--tasha-dark-text);
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  text-align: center;
+  color: #e65100;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tourism-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 2rem;
+}
+
+/* Tarjeta Dinámica en Amarillo */
+.tourism-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid var(--tasha-yellow-soft);
+  border-top: 6px solid var(--tasha-yellow-main);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tourism-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(245, 124, 0, 0.3);
+  border-top-color: var(--tasha-orange-accent);
+  border-color: var(--tasha-yellow-main);
+}
+
+.card-img-container {
+  overflow: hidden;
+  height: 200px;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tourism-card:hover .card-img-container img {
+  transform: scale(1.08);
+}
+
+.tourism-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: linear-gradient(to bottom, #ffffff, var(--tasha-yellow-soft));
+}
+
+.tourism-body h3 {
+  color: var(--tasha-dark-text);
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+}
+
+.tourism-body p {
+  font-size: 0.9rem;
+  color: #4e342e;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Botón Dinámico de Ubicación en Amarillo */
+.location-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--tasha-yellow-main), var(--tasha-orange-accent));
+  color: var(--tasha-dark-text);
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(251, 192, 45, 0.4);
+  text-align: center;
+}
+
+.location-btn:hover {
+  background: linear-gradient(135deg, var(--tasha-orange-accent), var(--tasha-red-accent));
+  color: var(--white);
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(230, 74, 25, 0.4);
+}
+
+/* Footer en Amarillo */
+.footer {
+  background: var(--tasha-yellow-main);
+  color: var(--tasha-dark-text);
+  position: relative;
+  margin-top: 4rem;
+  border-top: 2px solid var(--tasha-orange-accent);
+}
+
+.animated-wave {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.animated-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.wave-path {
+  fill: var(--tasha-yellow-main);
+  animation: waveMove 4s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  from { d: path("M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"); }
+  to { d: path("M321.39,20.44c58,10.79,114.16,10.13,172,21.86,82.39,16.72,168.19,27.73,250.45,0.39C823.78,50,906.67,20,985.66,32.83c70.05,10.48,146.53,5.09,214.34,10V0H0V27.35A600.21,600.21,0,0,0,321.39,20.44Z"); }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 2rem 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-block h3 {
+  color: #d84315;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.footer-block p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.social-icons a {
+  color: var(--tasha-dark-text);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--tasha-orange-accent);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.08);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media(max-width: 900px) {
+  .tourism-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 600px) {
+  .tourism-grid {
+    grid-template-columns: 1fr;
+  }
+}

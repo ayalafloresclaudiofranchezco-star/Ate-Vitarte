@@ -1,0 +1,482 @@
+/* Paleta de Colores: Uniqua (Magenta Vibrante, Rosa Suave y acentos fucsia) */
+:root {
+  --uniqua-magenta: #e91e63;
+  --uniqua-dark-magenta: #ad1457;
+  --uniqua-pink-light: #fce4ec;
+  --uniqua-accent: #ff4081;
+  --text-dark: #4a148c;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--uniqua-pink-light);
+  color: var(--text-dark);
+}
+
+/* Header & Nav */
+.header {
+  background: linear-gradient(135deg, var(--uniqua-magenta), var(--uniqua-dark-magenta));
+  color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.character-badge {
+  background: #ffeb3b;
+  color: var(--uniqua-dark-magenta);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.logo-container h1 {
+  font-size: 1.5rem;
+}
+
+.logo-container span {
+  color: #ffeb3b;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #ffeb3b;
+  border-bottom: 2px solid #ffeb3b;
+  padding-bottom: 4px;
+}
+
+/* Banner de Sección */
+.section-banner {
+  background: linear-gradient(rgba(173, 20, 87, 0.85), rgba(233, 30, 99, 0.85)), url('https://picsum.photos/id/1062/1200/300') no-repeat center center/cover;
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.section-banner h2 {
+  font-size: 2.5rem;
+  color: #ffeb3b;
+  margin-bottom: 0.5rem;
+}
+
+/* Contenedores y Secciones */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.content-section {
+  padding: 1rem 0;
+}
+
+.content-section.bg-alt {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-top: 2px dashed #f8bbd0;
+  border-bottom: 2px dashed #f8bbd0;
+}
+
+.content-section h2 {
+  text-align: center;
+  color: var(--uniqua-dark-magenta);
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #880e4f;
+  margin-bottom: 2.5rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card-box {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.1);
+  border-top: 6px solid var(--uniqua-magenta);
+}
+
+.card-box h3 {
+  color: var(--uniqua-dark-magenta);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--uniqua-magenta);
+}
+
+.req-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.req-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.req-list i {
+  color: var(--uniqua-magenta);
+  margin-top: 3px;
+}
+
+/* Formularios Dinámicos (Registro Civil y Tributos) */
+.form-container-rc, .tributos-calculator {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.15);
+  border-top: 6px solid var(--uniqua-accent);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--uniqua-dark-magenta);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #f8bbd0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--uniqua-magenta);
+  box-shadow: 0 0 5px rgba(233, 30, 99, 0.3);
+}
+
+.uniqua-btn {
+  background: linear-gradient(135deg, var(--uniqua-magenta), var(--uniqua-accent));
+  color: var(--white);
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+}
+
+.uniqua-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.rc-feedback {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Caja de Resultados de Tributos */
+.tributo-result-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fce4ec;
+  border-radius: 8px;
+  border-left: 5px solid var(--uniqua-magenta);
+  text-align: center;
+}
+
+.tributo-result-box h3 {
+  color: var(--uniqua-dark-magenta);
+  margin-bottom: 0.5rem;
+}
+
+.pay-btn {
+  margin-top: 1rem;
+  background: #2e7d32;
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pay-btn:hover {
+  background: #1b5e20;
+}
+
+/* Footer Animado */
+.footer {
+  background: var(--uniqua-dark-magenta);
+  color: var(--white);
+  position: relative;
+  margin-top: 4rem;
+}
+
+.animated-wave {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.animated-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.wave-path {
+  fill: var(--uniqua-dark-magenta);
+  animation: waveMove 4s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  from { d: path("M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"); }
+  to { d: path("M321.39,20.44c58,10.79,114.16,10.13,172,21.86,82.39,16.72,168.19,27.73,250.45,0.39C823.78,50,906.67,20,985.66,32.83c70.05,10.48,146.53,5.09,214.34,10V0H0V27.35A600.21,600.21,0,0,0,321.39,20.44Z"); }
+}
+
+/* --- Estilos Sección Cronograma de Limpieza y Eventos (Estilo Uniqua Magenta) --- */
+.cronograma-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cronograma-grid-2 {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.crono-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(233, 30, 99, 0.15);
+}
+
+.routes-card {
+  border: 2px solid #f8bbd0; /* Borde rosado claro */
+  border-top: 6px solid var(--uniqua-magenta); /* Borde superior Magenta Uniqua */
+}
+
+.events-card {
+  border: 2px solid #f48fb1; /* Borde rosado vibrante */
+  border-top: 6px solid var(--uniqua-dark-magenta); /* Borde superior Magenta oscuro */
+}
+
+.crono-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.routes-card h3 {
+  color: var(--uniqua-dark-magenta);
+}
+
+.events-card h3 {
+  color: var(--uniqua-magenta);
+}
+
+/* Ítems de Rutas */
+.crono-item {
+  background: #fff5f8;
+  border: 1px solid #fce4ec;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.crono-info h4 {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.crono-info p {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.badge-time {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.badge-time.green {
+  background: #f8bbd0;
+  color: var(--uniqua-dark-magenta);
+}
+
+/* Ítems de Eventos */
+.event-item {
+  background: #fff5f8;
+  border: 1px solid #fce4ec;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.event-date-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.event-date-badge.blue {
+  background: var(--uniqua-magenta); /* Sintonizado con magenta */
+}
+
+.event-date-badge.red {
+  background: var(--uniqua-dark-magenta); /* Sintonizado con magenta oscuro */
+}
+
+.event-date-badge .month {
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+}
+
+.event-date-badge .day {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.event-details h4 {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.event-details p {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.3;
+}
+
+/* Responsivo para celulares */
+@media(max-width: 768px) {
+  .cronograma-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 2rem 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-block h3 {
+  color: #ffeb3b;
+  margin-bottom: 1rem;
+}
+
+.footer-block p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.social-icons a {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffeb3b;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 0.85rem;
+}
